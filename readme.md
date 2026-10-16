@@ -13,3 +13,7 @@ Since I was familiar with **KiCad** I decided to design my own board computer.
 I came up with this design, featuring up to 3 sensors, a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
 
 ![render-of-PCB](Images/PCB-3D.png)
+
+## Future Plans / Software
+
+The next step is writing the flight software. I will probably use **MicroPython** to read the sensor data and control the rocket.
