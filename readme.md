@@ -5,7 +5,7 @@
 I watched a couple of [BPS.space](https://www.youtube.com/bpsspace) YouTube videos and thought *it's not gonna be that hard...*  
 I remembered a c't magazine article about the program **OpenRocket** and I tried it. My final rocket was this:
 
-![rocket-design-final](Images/rocket_figure.png)
+![rocket-design-final](Images/rocket-figure_new.png)
 
 ## Why a PCB?
 
