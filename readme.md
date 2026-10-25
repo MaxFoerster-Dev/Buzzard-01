@@ -10,7 +10,7 @@ I remembered a c't magazine article about the program **OpenRocket** and I tried
 
 ### Why a Flight Computer?
 
-Altough it sounds like overkill, to put a flight computer on to the first ever build rocket, I did it
+Altough it sounds like overkill, to put a flight computer on to the first ever build rocket, I did it.  
 Since I was familiar with **KiCad** I choose todesign the flight computer with KiCad.  
 I came up with this design, featuring up to 3 sensors, a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
 
