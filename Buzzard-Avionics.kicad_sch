@@ -2515,7 +2515,7 @@
 			(uuid "2a33d945-e9de-4968-bde5-e3bf7178222c")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "A1")
 					(unit 1)
@@ -2597,7 +2597,7 @@
 			(uuid "626f8a08-e49e-45a8-8353-2bfbf74d3c89")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "J4")
 					(unit 1)
@@ -2680,7 +2680,7 @@
 			(uuid "a4f9c2a8-5217-49db-a416-ebb048a8152a")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "SW1")
 					(unit 1)
@@ -2758,7 +2758,7 @@
 			(uuid "a0e0b3e4-0c62-49fb-b627-56218ac8977a")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "#FLG01")
 					(unit 1)
@@ -2778,7 +2778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aeb5f13a-56d8-4de7-b3e3-c070736e28a3")
-		(property "Reference" "JMPU6050"
+		(property "Reference" "MPU6050"
 			(at 66.675 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2844,9 +2844,9 @@
 			(uuid "1d30772a-c72e-4ddb-aed2-101eb6bb3174")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
-					(reference "JMPU6050")
+					(reference "MPU6050")
 					(unit 1)
 				)
 			)
@@ -2930,7 +2930,7 @@
 			(uuid "2ff70249-651d-434a-a1cf-4b1e54174160")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "JSGP30")
 					(unit 1)
@@ -3016,7 +3016,7 @@
 			(uuid "5f8865b7-a12f-4469-bc78-d762f1f0e601")
 		)
 		(instances
-			(project "Rakete_v1"
+			(project "Buzzard-Avionics"
 				(path "/c8b6c309-6573-422c-a8ed-173ce712d251"
 					(reference "BMP280")
 					(unit 1)
