@@ -152,7 +152,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/58e7a483-6563-40ec-a839-704b0b4f2f33")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -577,7 +577,7 @@
 		)
 		(path "/722a1c1c-c3be-443b-bccf-62cf9ed35687")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -987,7 +987,7 @@
 		(property ki_fp_filters "RaspberryPi?Pico?Common* RaspberryPi?Pico?SMD*")
 		(path "/0538036d-1e12-4e17-ace3-1f9d0616923c")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -2497,8 +2497,8 @@
 		(at 196.5 115.92)
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
-		(property "Reference" "JMPU6050"
-			(at -2.81 4.81 90)
+		(property "Reference" "JSGP30"
+			(at -5.5 8.58 90)
 			(layer "F.SilkS")
 			(uuid "7fa89121-76d1-49ca-8d0c-110aa847a9a5")
 			(effects
@@ -2556,7 +2556,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/b5cbfc5b-1e6e-4f1b-9851-b464ee27d4e1")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -2761,7 +2761,7 @@
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
 		(property "Reference" "BMP280"
-			(at 0 -2.38 90)
+			(at 0 -2.38 270)
 			(layer "F.SilkS")
 			(uuid "127ce7bf-7433-4d78-b6ed-9b9c1eb06f6e")
 			(effects
@@ -2819,7 +2819,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/ec36ccc5-d3eb-4232-92cf-a8399e43b6dd")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -3023,8 +3023,8 @@
 		(at 188.81 124.5 -90)
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
-		(property "Reference" "JMPU6050"
-			(at 0 -2.38 90)
+		(property "Reference" "MPU6050"
+			(at -4 -5.19 270)
 			(layer "F.SilkS")
 			(uuid "70181949-c75b-41ce-aa8f-07f2228f32bf")
 			(effects
@@ -3082,7 +3082,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/aeb5f13a-56d8-4de7-b3e3-c070736e28a3")
 		(sheetname "/")
-		(sheetfile "Rakete_v1.kicad_sch")
+		(sheetfile "Buzzard-Avionics.kicad_sch")
 		(units
 			(unit
 				(name "A")
