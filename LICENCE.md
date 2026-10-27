@@ -1,3 +1,4 @@
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-darkblue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 
 Copyright (c) 2026 [Maximilian Förster](https://github.com/MaxFoerster-Dev)
