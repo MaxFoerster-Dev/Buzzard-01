@@ -41,4 +41,4 @@ These files contain the schematics and PCB layout for the custom flight computer
 
 These files contain the 3D-printable components of the rocket (like the nose cone or fins) and 3D renders of the electronics.
 
-- **How to use:** Import the `.stl` or `.obj` files directly into your preferred 3D printing slicer (e.g., Cura, PrusaSlicer) or a CAD program (e.g., Blender, Fusion 360) for modifications.
+- **How to use:** Import the ˋobj` files directly into your preferred 3D printing slicer (e.g., Cura, PrusaSlicer) or a CAD program (e.g., Blender, Fusion 360) for modifications.
