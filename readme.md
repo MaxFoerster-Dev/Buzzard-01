@@ -1,27 +1,27 @@
 # Buzzard-01
 
-<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: #FFFFFF;"><img alt="License: CC BY-NC-SA 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-darkblue.svg"></a>
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-darkblue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## The Rocket
 
 ### How I came up with the idea:
 
-I watched a couple of <a href="https://www.youtube.com/bpsspace" style="color: #FFFFFF;">BPS.space</a> YouTube videos and thought _it's not gonna be that hard..._  
-I remembered a c't magazine article about the program **<a href="https://openrocket.info/" style="color: #FFFFFF;">OpenRocket</a>** and I tried it. My final rocket was this:
+I watched a couple of [BPS.space](https://www.youtube.com/bpsspace) YouTube videos and thought _it's not gonna be that hard..._  
+I remembered a c't magazine article about the program **[OpenRocket](https://openrocket.info/)** and I tried it. My final rocket was this:
 
 ![rocket-design-final](Images/rocket-figure_new.png)
 
 ### Why a Flight Computer?
 
 Although it sounds like overkill, to put a flight computer on to the first ever build rocket, I did it.  
-Since I was familiar with **<a href="https://kicad.org" style="color: #FFFFFF;">KiCad</a>** I choose to design the flight computer with KiCad.  
+Since I was familiar with **[KiCad](https://kicad.org)** I choose to design the flight computer with KiCad.  
 I came up with this design, featuring up to 3 sensors, a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
 
 ![render-of-PCB](Images/PCB-3D_new.png)
 
 ### Future Plans / Software
 
-The next step is writing the flight software. I will probably use **<a href="https://micropython.org" style="color: #FFFFFF;">MicroPython</a>** to read the sensor data and control the rocket.
+The next step is writing the flight software. I will probably use **[MicroPython](https://micropython.org)** to read the sensor data and control the rocket.
 
 ## Use of the Files
 
