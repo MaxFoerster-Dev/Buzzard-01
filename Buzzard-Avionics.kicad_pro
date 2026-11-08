@@ -658,13 +658,18 @@
       {
         "filename": "Buzzard-Avionics.kicad_sch",
         "name": "Buzzard-Avionics",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "c8b6c309-6573-422c-a8ed-173ce712d251"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U1-3",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "c8b6c309-6573-422c-a8ed-173ce712d251",
+      "Buzzard-Avionics"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
