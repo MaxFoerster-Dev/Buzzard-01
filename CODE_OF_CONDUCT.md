@@ -16,7 +16,7 @@
 ## Enforcement
 Project maintainers are responsible for clarifying and enforcing these standards. Unacceptable behavior may result in comment deletion, issue locking, or blocking from the repository.
 
-If you observe unacceptable behavior or safety concerns, please report them by contacting the project maintainer at **maximmilian.linus.foerster@gmail.com** or by opening a private security/moderation inquiry.
+If you observe unacceptable behavior or safety concerns, please report them by contacting the project maintainer at **maximilian.linus.foerster@gmail.com** or by opening a private security/moderation inquiry.
 
 ---
 *Adapted from the [Contributor Covenant](https://contributor-covenant.org) and tailored for open-source hardware and rocketry.*
