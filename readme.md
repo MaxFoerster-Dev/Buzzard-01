@@ -54,3 +54,9 @@ To view, modify, or build this project, you will need the following software:
 | **[MicroPython](https://micropython.org)** | Flight controller firmware (Raspberry Pi Pico) | v1.22+ |
 | **[Thonny](https://thonny.org)** or **[VS Code](https://code.visualstudio.com/download)** | Recommended IDE for flashing and writing MicroPython | Latest |
 | **Any 3D Slicer** (e.g., [Cura](https://curaslicer.com/), [PrusaSlicer](https://www.prusa3d.com/p/prusaslicer/)) | Slicing `.stl`/`.obj` files for 3D printing | - |
+
+## Security & Safety
+
+Building and launching model rockets involves inherent physical and electrical risks. Please read the [Security Policy](https://github.com/MaxFoerster-Dev/Buzzard-01/security/policy) for important safety disclaimers, launch regulations, and instructions on how to report critical hardware or software flaws.
+
+
