@@ -19,7 +19,7 @@ This repository contains designs for a model rocket, 3D-printed structural parts
 If you discover a critical flaw in the **KiCad schematics/PCB** (e.g., short circuits, thermal hazards) or a vulnerability in the **MicroPython flight software** (e.g., crashes, sensor read failures, unintended pyro/servo triggers), please report it responsibly:
 
 1. **Do not** open a public issue for severe safety or security flaws before they are reviewed.
-2. Contact the maintainer directly via email at **[DEINE-E-MAIL-ADRESSE]** (or use GitHub's *Private Vulnerability Reporting* feature under the **Security** tab).
+2. Contact the maintainer directly via email at **maximilian.linus.foerster@gmail.com** (or use GitHub's *Private Vulnerability Reporting* feature under the **Security** tab).
 3. Include a brief description of the issue, affected files, and steps to reproduce or fix it.
 
 You can expect an initial response within a few days. Once verified, a fix will be pushed to the `main` branch.
