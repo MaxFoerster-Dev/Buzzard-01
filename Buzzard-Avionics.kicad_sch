@@ -4523,7 +4523,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MPU-6050-A:QFN50P400X400X95-24N"
+		(property "Footprint" "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.6mm"
 			(at 39.37 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -4885,7 +4885,7 @@
 				)
 			)
 		)
-		(property "Footprint" "BMP280:XDCR_BMP280"
+		(property "Footprint" "Buzzard-01:XDCR_BMP280"
 			(at 38.1 85.09 0)
 			(hide yes)
 			(show_name no)
