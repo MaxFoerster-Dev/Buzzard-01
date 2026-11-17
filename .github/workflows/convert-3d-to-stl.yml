@@ -1,0 +1,81 @@
+name: Convert STEP and OBJ to STL
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - '**.step'
+      - '**.stp'
+      - '**.obj'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install conversion libraries
+        run: |
+          pip install cadquery-ocp trimesh numpy
+
+      - name: Convert STEP and OBJ to STL
+        run: |
+          python - << 'EOF'
+          import os
+          import trimesh
+          from OCP.STEPControl import STEPControl_Reader
+          from OCP.BRepMesh import BRepMesh_IncrementalMesh
+          from OCP.StlAPI import StlAPI_Writer
+
+          def convert_step(src, dst):
+              reader = STEPControl_Reader()
+              if reader.ReadFile(src) == 1:
+                  reader.TransferRoots()
+                  shape = reader.OneShape()
+                  mesh = BRepMesh_IncrementalMesh(shape, 0.1)
+                  mesh.Perform()
+                  writer = StlAPI_Writer()
+                  writer.Write(shape, dst)
+                  print(f"Converted STEP: {src} -> {dst}")
+
+          def convert_obj(src, dst):
+              mesh = trimesh.load(src, force='mesh')
+              mesh.export(dst)
+              print(f"Converted OBJ: {src} -> {dst}")
+
+          for root, _, files in os.walk('.'):
+              if '.git' in root:
+                  continue
+              for file in files:
+                  full_path = os.path.join(root, file)
+                  base, ext = os.path.splitext(full_path)
+                  ext_lower = ext.lower()
+                  stl_path = base + '.stl'
+
+                  if ext_lower in ['.step', '.stp']:
+                      convert_step(full_path, stl_path)
+                  elif ext_lower == '.obj':
+                      convert_obj(full_path, stl_path)
+          EOF
+
+      - name: Commit STL files to repository
+        run: |
+          git config --local user.email "github-actions[bot]@://github.com"
+          git config --local user.name "github-actions[bot]"
+          git add "*.stl"
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-convert 3D models (STEP/OBJ) to STL"
+            git push
+          else
+            echo "No new STL changes found."
+          fi
