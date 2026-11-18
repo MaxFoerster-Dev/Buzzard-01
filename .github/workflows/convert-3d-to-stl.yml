@@ -1,8 +1,10 @@
+
 name: Convert STEP and OBJ to STL
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
     paths:
       - '**.step'
       - '**.stp'
@@ -15,9 +17,12 @@ permissions:
 jobs:
   convert:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,56 +31,122 @@ jobs:
 
       - name: Install conversion libraries
         run: |
-          pip install cadquery-ocp trimesh numpy
+          python -m pip install --upgrade pip
+          python -m pip install cadquery-ocp trimesh numpy
+
+      - name: Test OCP installation
+        run: |
+          python -c "from OCP.STEPControl import STEPControl_Reader; print('OCP successfully installed')"
 
       - name: Convert STEP and OBJ to STL
         run: |
-          python - << 'EOF'
+          python - <<'PY'
           import os
+          from pathlib import Path
           import trimesh
+
           from OCP.STEPControl import STEPControl_Reader
+          from OCP.IFSelect import IFSelect_RetDone
           from OCP.BRepMesh import BRepMesh_IncrementalMesh
           from OCP.StlAPI import StlAPI_Writer
 
           def convert_step(src, dst):
+              print(f"Processing STEP: {src}")
+
               reader = STEPControl_Reader()
-              if reader.ReadFile(src) == 1:
-                  reader.TransferRoots()
-                  shape = reader.OneShape()
-                  mesh = BRepMesh_IncrementalMesh(shape, 0.1)
-                  mesh.Perform()
-                  writer = StlAPI_Writer()
-                  writer.Write(shape, dst)
-                  print(f"Converted STEP: {src} -> {dst}")
+              status = reader.ReadFile(str(src))
+
+              if status != IFSelect_RetDone:
+                  raise RuntimeError(f"Cannot read STEP file: {src}")
+
+              transferred = reader.TransferRoots()
+
+              if transferred == 0:
+                  raise RuntimeError(f"No STEP geometry found: {src}")
+
+              shape = reader.OneShape()
+
+              if shape.IsNull():
+                  raise RuntimeError(f"Empty STEP geometry: {src}")
+
+              mesh = BRepMesh_IncrementalMesh(shape, 0.1)
+              mesh.Perform()
+
+              if not mesh.IsDone():
+                  raise RuntimeError(f"Meshing failed: {src}")
+
+              writer = StlAPI_Writer()
+
+              if not writer.Write(shape, str(dst)):
+                  raise RuntimeError(f"STL export failed: {dst}")
+
+              print(f"SUCCESS: {dst}")
 
           def convert_obj(src, dst):
-              mesh = trimesh.load(src, force='mesh')
-              mesh.export(dst)
-              print(f"Converted OBJ: {src} -> {dst}")
+              print(f"Processing OBJ: {src}")
 
-          for root, _, files in os.walk('.'):
-              if '.git' in root:
-                  continue
-              for file in files:
-                  full_path = os.path.join(root, file)
-                  base, ext = os.path.splitext(full_path)
-                  ext_lower = ext.lower()
-                  stl_path = base + '.stl'
+              mesh = trimesh.load(
+                  str(src),
+                  force="mesh",
+                  process=True
+              )
 
-                  if ext_lower in ['.step', '.stp']:
-                      convert_step(full_path, stl_path)
-                  elif ext_lower == '.obj':
-                      convert_obj(full_path, stl_path)
-          EOF
+              if not isinstance(mesh, trimesh.Trimesh):
+                  raise RuntimeError(f"Invalid OBJ mesh: {src}")
+
+              if mesh.is_empty:
+                  raise RuntimeError(f"OBJ contains no geometry: {src}")
+
+              mesh.export(str(dst), file_type="stl")
+
+              if not dst.exists() or dst.stat().st_size == 0:
+                  raise RuntimeError(f"STL export failed: {dst}")
+
+              print(f"SUCCESS: {dst}")
+
+          files = []
+
+          for root, dirs, filenames in os.walk("."):
+              dirs[:] = [d for d in dirs if d != ".git"]
+
+              for filename in filenames:
+                  path = Path(root) / filename
+
+                  if path.suffix.lower() in (".step", ".stp", ".obj"):
+                      files.append(path)
+
+          if not files:
+              print("No STEP, STP or OBJ files found.")
+
+          for src in files:
+              dst = src.with_suffix(".stl")
+
+              try:
+                  if src.suffix.lower() in (".step", ".stp"):
+                      convert_step(src, dst)
+
+                  elif src.suffix.lower() == ".obj":
+                      convert_obj(src, dst)
+
+              except Exception as error:
+                  print(f"ERROR processing {src}: {error}")
+                  raise
+
+          print(f"Finished processing {len(files)} files.")
+          PY
 
       - name: Commit STL files to repository
         run: |
-          git config --local user.email "github-actions[bot]@://github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add "*.stl"
-          if ! git diff --staged --quiet; then
-            git commit -m "Auto-convert 3D models (STEP/OBJ) to STL"
-            git push
+
+          find . -type f -iname '*.stl' \
+            -not -path './.git/*' \
+            -print0 | xargs -0 -r git add --
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-convert 3D models to STL"
+            git push origin HEAD:main
           else
-            echo "No new STL changes found."
+            echo "No STL changes found."
           fi
