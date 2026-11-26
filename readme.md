@@ -15,7 +15,7 @@ I remembered a c't magazine article about the program **[OpenRocket](#️-requir
 
 Although it sounds like overkill, to put a flight computer on to the first ever build rocket, I did it.  
 Since I was familiar with **[KiCad](#️-required-software--toolchain)** I choose to design the flight computer with KiCad.  
-I came up with this design, featuring up to 3 sensors, a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
+I came up with this design, featuring up to 3 sensors (MPU-6050-A, SGP40 and an BMP280), a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
 
 ![render-of-PCB](Images/PCB-3D_new.png)
 
