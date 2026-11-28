@@ -15,7 +15,7 @@ I remembered a c't magazine article about the program **OpenRocket** and I tried
 
 Although it sounds like overkill, to put a flight computer on to the first ever build rocket, I did it.  
 Since I was familiar with **KiCad** I choose to design the flight computer with KiCad.  
-I came up with this design, featuring up to 3 sensors (MPU-6050-A, SGP40 and an BMP280), a Raspberry Pi Pico and a place for the battery and an ON/OFF switch:
+I came up with this design, featuring up to 3 sensors (MPU-6050-A, SGP40 and an BMP280), a XIAO-ESP32-S3 module and a place for the battery and an ON/OFF switch:
 
 ![render-of-PCB](Images/PCB-3D_new.png)
 
@@ -51,7 +51,7 @@ To view, modify, or build this project, you will need the following software:
 | :--- | :--- | :--- |
 | **[OpenRocket](https://openrocket.info)** | Rocket flight simulation and design (`.ork` files) | v23.09 or newer |
 | **[KiCad](https://kicad.org)** | PCB Design & Schematics (`.kicad_*` files) | v8.x or newer |
-| **[MicroPython](https://micropython.org)** | Flight controller firmware (Raspberry Pi Pico) | v1.22+ |
+| **[MicroPython](https://micropython.org)** | Flight controller firmware (ESP32) | v1.22+ |
 | **[Thonny](https://thonny.org)** or **[VS Code](https://code.visualstudio.com/download)** | Recommended IDE for flashing and writing MicroPython | Latest |
 | **Any 3D Slicer** (e.g., [Cura](https://curaslicer.com/), [PrusaSlicer](https://www.prusa3d.com/p/prusaslicer/)) | Slicing `.stl`/`.obj` files for 3D printing | - |
 
